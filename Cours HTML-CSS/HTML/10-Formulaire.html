@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Titre de note page</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <!--"form" permet de créer un formulaire. Les formulaires servent à récuperer des informations sur l'utilisateur du site-->
+        <form action="">
+            <!--label sert à afficher un contenu devant l'élément du formulaire. On mettra le même id au label qu'à l'élément, pour que le label et l'élément soit liés-->
+            <label for="idNom">Nom :</label>
+            <!--Type permet de créer un nouvel element (après il faut choisir la forme de l'élément, comme un texte ou une liste déroulante par exemple). name sert à donner un nom à la variable qui récuperera le résultat que l'utilisateur aura noté (si c'est un texte). "placeholder" permet de dire à l'utilisateur ce qu'on attend de lui.-->
+            <input id="idNom" type="text" name="nom" placeholder="Veuillez entrer votre nom">
+            <br>
+            <!--Zone de texte long-->
+            <textarea name="textelong" id="idTexteLong" cols="50" rows="20"></textarea>
+            <br>
+            <!--Cases à cocher-->
+            <input type="checkbox" value="velo">Vélo
+            <br>
+            <input type="checkbox" value="voiture" checked>Voiture
+            <br>
+            <input type="checkbox" value="avion">Avion
+            <br>
+            <!--Les radios doivent avoir le même name pour qu'on puisse qu'en choisir qu'un-->
+            <input type="radio" name="sexe" value="monsieur" checked>monsieur
+            <br>
+            <input type="radio" name="sexe" value="madame">madame
+            <br>
+            <!--Liste déroulante-->
+            <select name="voiture" id="idVoitureDeroul">
+                <option value="Peugeot">Peugeot</option>
+                <option value="Citroen">Citroen</option>
+                <option value="Reunault">Reunault</option>
+                <option value="Mercedes">Mercedes</option>
+                <option value="Audi">Audi</option>
+            </select>
+            <br>
+            <!--input submit permet d'envoyer les informations de l'utilisateur au serveur-->
+            <input type="submit" value="Valider">
+        </form>
+    </body>
+</html>
