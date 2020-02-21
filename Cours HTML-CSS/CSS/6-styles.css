@@ -1,0 +1,56 @@
+p {
+    color: red;
+    font-size: 30px;
+    font-family: Arial;
+}
+
+h1 {
+    color : blue;
+}
+
+/* Imbication div, dedans un div, et dans le second div un p.
+On vient définir des caractéristiques au p spécifiquement dans les 2 div et pas aux autres p */
+/*
+div div p { 
+    font-size: 15px;
+    color: grey;
+}
+*/
+
+/* Caractéristique pour tous les éléments de la page : "*" */
+/* 
+* {
+    border: 2px solid black;
+}
+*/
+
+/*Appliquer un style à une classe (voir le code HTML pour savoir ce qu'est une classe)*/
+.special {
+    color : orange;
+}
+
+/* Quand on veut mettre du style à un tag ayant un id, on met un # */
+#unique {
+    font-size: 80px;
+}
+
+/*Pseudo classe :
+
+On défini un style à un lien selon ses états, son intéraction
+*/
+
+a:link { /*Lien de base, quand il est pas visité*/
+    color : orange;
+}
+
+a:hover { /*Quand on passe sa souris sur le lien*/
+    color : blue;
+}
+
+a:visited { /*Lien visité, déjà cliqué*/
+    color : green;
+}
+
+p:first-child { /*le premier p qui apparait dans mon code HTML reçoit les caractéristiques suivantes*/
+    font-size: 30px;
+}

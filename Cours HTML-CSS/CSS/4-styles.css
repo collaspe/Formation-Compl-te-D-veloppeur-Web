@@ -1,0 +1,11 @@
+/*
+Unités de mesure :
+- Pixel : X px;
+- em (1em = 100% de la taille de base du texte). Exemple : 2 em = texte 2x plus grand.
+
+*/
+p {
+    color : red;
+    font-size: 30px;
+    font-family: Arial;
+}

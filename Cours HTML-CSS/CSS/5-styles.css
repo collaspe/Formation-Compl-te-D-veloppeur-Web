@@ -1,0 +1,21 @@
+/* Police en anglais -> font
+
+Font intégrées au CSS : 
+- serif
+- sans-serif
+- cursive
+
+Système de rattrapage (Polices installées sur le PC de l'utilisateur):
+Si il n'y a pas de Helvetica, alors il y a peut etre de l'arial, sinon on met du sans-serif.
+- font-family: Helvetica, Arial, sans-serif;
+
+Inclure un fichier police a integrer dans le dossier du css pour mettre la police en question
+
+*/
+p {
+    color : red;
+    font-size: 30px;
+    font-family: Helvetica, Arial, sans-serif;
+    /* texte en gras : font-weight: bold; */
+    /* placer un texte : text-align: center; */
+}

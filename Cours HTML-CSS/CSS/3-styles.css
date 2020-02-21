@@ -1,0 +1,12 @@
+/*Différents encodages pour que CSS détecte la couleur :
+
+- rgb(rouge,vert,bleu) de 0 à 255
+- hexadécimale : #00d0fd
+- rgba(rouge,vert,bleu,alpha[opacité]) : alpha : de 0 à 1*/
+
+p {
+    /*color: rgb(0,0,255);*/
+    /*color : #00d0fd; */
+    color: rgba(0,0,255,0.2);
+    font-family: Arial;
+}
