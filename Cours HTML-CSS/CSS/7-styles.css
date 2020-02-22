@@ -1,0 +1,17 @@
+/*
+"display par défaut a la valeur "block"
+
+Un élément ayant l'attribut display block oblige l'élément suivant à aller à la ligne
+On ne peut pas donner de largeur ou de hauteur avec le display inline
+
+- block (valeur par défaut, passage à la ligne sur l'attribut p
+- inline (on peut pas modifier la hauteur et largeur)
+- inline-block (on peut modifier la hauteur et largeur)
+- none : aucun de nos paragraphes ne sont affichés
+*/
+
+p {
+    display:none;
+    background-color: yellow;
+    width: 200px;
+}

@@ -1,0 +1,36 @@
+/*
+"box model" dans google
+Chaque élément des tags html sont des boites
+
+L'attribut "margin" : 
+- margin fait un deplacement de la div, ici on fait un déplacement de 100px du haut, 100px du bas, 100px de la gauche, 100px de la droite
+- margin-top fait le décalage que depuis le haut
+- margin avec 4 valeurs : haut droite bas gauche (sens des aiguilles du montre)
+- margin avec 2 valeurs : haut/bas gauche/droite
+remarque : si on met 'auto' ça veut dire qu'on prend tout l'espace de pixel en haut en bas a gauche a droite equitablement on partage, donc on se retrouve avec une div centrée sur la page.
+Ce procédé fonctionne si on fait haut/bas ou gauche/droite
+
+L'attribut "border" :
+- border-style -> avec la caractéristique 'solid' on obtient une bordure noire autour de notre div
+- border-width -> épaisseur de la bordure
+- border-color -> couleur de la bordure
+- border -> largeur styledelabordure couleur -> border : "border-width" "border-style" "border-color".
+ce border on peut le personnaliser, marquer juste "border-left" ou right ou top ou bottom et c'est seulement que le côté spécifié qui changera
+
+L'attribut "padding" :
+Distance entre la bordure de la div et le p (distance entre les 2 éléments imbriqués)
+Fonctionne de la même manière que les marges
+*/
+
+.red {
+    background-color: red;
+    width: 400px;
+    height: 500px;
+    padding : 50px 20px;
+}
+
+.blue {
+    background-color: blue;
+    width: 400px;
+    height: 500px;
+}

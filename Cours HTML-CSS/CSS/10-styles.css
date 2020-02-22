@@ -1,0 +1,33 @@
+/*
+Attribut "position" :
+- Sa valeur par défaut : static
+- relative : Change rien mais donne le pouvoir d'utiliser d'autres propriétés : 
+    - top bottom left right -> ici la div par de l'endroit où elle est. Elle s'espace en fonction des valeurs qu'on lui donne
+-fixed : Voir la div en permanence sur mon écran. fixed donne accès aux attributs bottom left right top
+- absolute : div qui se positionne au top, au bottom, au left, au right qu'on défini. Tout ces paramètres prennent en compte la page et pas les éléments de la page.
+
+
+*/
+
+.left {
+    height: 1450px;
+    width: 200px;
+    background-color : blue;
+}
+
+.right {
+    height: 250px;
+    width: 150px;
+    background-color : red;
+    position: absolute;
+    top : 100px;
+    left : 100px; /* la div est placée a 100px top et left du body et non du container.
+    la div va chercher son parent, mais son parent est obligatoirement non static en position. Si tout les élements parents de la div sont en static, alors body devient son parent
+    si #container recupere la position relative alros la div va s'adapter à son parent #container et non le body du coup */
+}
+
+#container {
+    position : relative;
+    margin-top: 200px;
+    margin-left: 200px;
+}
