@@ -1,0 +1,278 @@
+/* GENERAL */
+* { /*On veut controler nos marges et donc on désactive les valeurs par défaut*/
+    margin: 0;
+    padding : 0;
+}
+
+body {
+    font-family: Arial, sans-serif; /*Police par défaut du site, si jamais l'utilisateur n'arrive pas à lire l'Arial, alors sans-serif (police intégrée au CSS)*/
+    font-size: 15px; /*Taille de texte par défaut*/
+}
+
+h1, h2, h3, h4 { /*Pour tous les header, même couleur*/
+    color: #444444;
+}
+
+h1 { /*Logo travel agency*/
+    font-family: "Crete Round", serif;
+    font-size: 45px;
+}
+
+h2 { /*On met tous les parametres des H2 pour pouvoir utiliser h2 dans toute la page avec ces paramètres*/
+    color:#444444;
+    font-size: 55px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 24px;
+
+}
+
+p {
+    line-height: 20px; /*Hauteur de ligne de 20 px. Entre chaque ligne du paragraphe on a 20px*/
+    color: #777777;
+}
+
+ ul {
+    list-style: none; /*permet de retirer tous les petits points devant chaque élément de la liste*/
+ }
+
+ a {
+     text-decoration: none; /*Liens plus soulignés*/
+     color : #444444;
+ }
+.wrapper {
+    width: 940px;
+    margin: 0 auto; /*auto sert a centrer l'élément a gauche & a droite*/
+    padding : 0 10px;
+}
+
+.orange { /*Point orange*/
+    color: #ff7100;
+}
+
+.clear { /*Laisser de l'espace*/
+    clear: both;
+}
+
+small {
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* HEADER */
+
+header {
+    height: 120px;
+}
+
+header h1 { /*Tous les h1 du header*/
+    float : left;
+    margin-top : 32px;
+}
+
+header nav {
+    float : right;
+    margin-top : 50px;
+}
+
+header nav ul li { /*Chacun des éléments li qui se trouve dans notre ul se trouvant dans le nav qui est dans le header*/
+    float: left;
+    display: block;
+}
+
+header nav ul li a {
+    text-transform: uppercase; /*Mettre le texte du menu en majuscule*/
+    font-weight: bold;
+    margin-right : 20px;
+}
+
+/*MAIN IMAGE*/
+#main-image {
+    height : 580px; /*taille*/
+    background: url('images/24.3\ main.jpg.jpg') center;
+}
+
+#main-image h2 {
+    font-weight: normal; /*On retire le gras par défaut mit par le h2*/
+    text-transform: uppercase; /*Texte en majuscule*/
+    text-align: center; /*Texte centré sur la page*/
+    padding: 150px 0 40px 0;
+    margin-bottom: 20px;
+}
+
+.button-1 {
+    display: block; /*Par défaut un lien est in-line, donc si on veut que width et height marche on doit mettre display block*/
+    width: 120px; /*taille du bouton*/
+    height: 50px; /*hauteur du bouton*/
+    background: #ff7100; /*Couleur du bouton*/
+    color: #ffffff; /*couleur du texte*/
+    font-size: 20px; /*taille du texte*/
+    margin : 0 auto; /*centrer le bouton*/
+    line-height: 50px;
+    text-align: center; /*On centre le texte dans le bouton*/
+    border-radius: 3px; /*Arrondir les coins du bouton*/
+}
+
+.button-1:hover {
+    background: #02D8DD;
+}
+
+/*STEPS*/
+#steps ul {
+    margin: 80px 0; /*marge entre le main image & posibilities*/
+}
+
+#steps ul li {
+    width: 300px; /*largeur*/
+    float: left;
+    padding-top: 140px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+#steps h4 {
+    text-transform: uppercase; /*Titre des paragraphes en majuscule*/
+    margin-bottom: 20px;
+}
+
+#steps p {
+    margin-bottom: 20px;
+}
+
+#step-1 {
+    background: url("images/24.1\ steps-icon-1.png.png") no-repeat top center; /*no-repeat sert à avoir l'image qu'une fois dans le container*/
+}
+
+#step-2 {
+    background: url("images/24.2\ steps-icon-2.png.png") no-repeat top center;
+}
+
+#step-3 {
+    background: url("images/24.5\ steps-icon-3.png.png") no-repeat top center;
+}
+
+/*POSIBILITIES*/
+#posibilities {
+    background-color: #efefef;
+    padding: 60px 0;
+}
+
+#posibilities article {
+    width: 460px; /*largeur*/
+    height: 270px; /*hauteur*/
+    float: left; /*article les uns à côté des autres*/
+    border-radius: 10px; /*arrondir les bords de l'article*/
+}
+
+#posibilities article:first-child { /*On prend que le premier article de la liste de posibilities, donc first-child pour le selectionner*/
+    margin-right: 20px;
+}
+
+.overlay { /*Correspond à l'ensemble composé du titre, du paragraphe, et du plus d'infos*/
+    background: rgba(255,255,255,0.95);
+    height: 100%;
+    width: 190px;
+    padding: 20px;
+    border-radius: 10px 0 0 10px;
+    text-align: center; /*Centrer tout le contenu de l'overlay*/
+    box-sizing: border-box; /*Enlever le bord blanc qui depasse, il faut que la hauteur du overlay inclue le padding c'est a dire ajouter a la classe css overlay : box-sizing : boder-box;*/
+}
+
+article h4 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#posibilities p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.button-2 {
+    color: #ffffff;
+    background-color: #ff7100;
+    padding: 6px 20px;
+    border-radius: 3px;
+}
+
+.button-2:hover {
+    color: #ffffff;
+    background-color: #02B8DD;
+    padding: 6px 20px;
+    border-radius: 3px;
+}
+
+/*CONTACT*/
+#contact {
+    padding: 60px 0px;
+    text-align: center;
+}
+
+#contact h3 { /*"Contactez-nous"*/
+    width: 400px; /*largeur*/
+    text-transform: uppercase;
+    margin: 0 auto 20px auto;
+    border-bottom: 1px solid #02B8DD;
+    padding-bottom: 20px;
+}
+
+form {
+    margin: 60px 0 20px 0;
+}
+
+label {
+    font-weight: bold; /*les labels en gras*/
+    font-size: 20px;
+    margin-right: 10px;
+    color: #777777;
+}
+
+input[type="text"] { /*Si les input sont avec type=text alors on applique les caracteristiques si dessous*/
+    padding: 10px;
+    font-size: 20px;
+    margin-right: 20px;
+    border: 2px solid #ddd;
+    border-radius: 3px;
+}
+
+.button-3 {
+    color: #ffffff;
+    font-size: 20px;
+    font-style: bold;
+    padding: 11px;
+    background-color: #02B8DD;
+    border-style: none;
+    border-radius: 3px;
+}
+
+.button-3:hover {
+    color: #ffffff;
+    background-color: #444;
+}
+
+/*FOOTER*/
+footer {
+    height: 260px;
+    background-color: #444444;
+}
+
+footer h1 {
+    color: #ffffff;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.copyright {
+    text-align: center;
+    font-weight: bold;
+    padding: 30px;
+    color: #777;
+}
