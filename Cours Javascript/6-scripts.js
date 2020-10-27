@@ -77,7 +77,7 @@ switch(variable) {
 var favoriteColor = "grey";
 
 switch(favoriteColor) {
-    case "yellow": //Si on rentre dans yellow ça existe le code du blue car on a pas mis de break entre 2
+    case "yellow": //Si on rentre dans yellow ça execute le code du blue car on a pas mis de break entre 2
     case "blue":
         console.log("Woah le bleu c'est trop beau");
         break;
