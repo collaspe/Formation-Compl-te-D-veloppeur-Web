@@ -1,6 +1,6 @@
 /* JEU SNAKE 
 - Revoir à partir de la vidéo 19 de la formation en JS car compliqué
-- Reprendre video 21 je me suis arrêté là
+- Reprendre video 23 je me suis arrêté là
 
 */
 
@@ -14,11 +14,13 @@ window.onload = function(){
     var blockSize = 30;
     var delais = 100; //1sec
     var xCoord = 0;
-    var xCoord = 0;
+    var yCoord = 0;
     var serpentard;
+    var applee; // Variable de notre pomme
+    var  widthInBlocks = canvasWidth/blockSize;
+    var heightInBlocks = canvasHeight/blockSize;
 
     init();
-
     function init(){ //Initialisation du canvas
         canvas = document.createElement('canvas'); //Canvas est la structure pour faire le jeu (sa fenetre)
         canvas.width = canvasWidth;
@@ -27,14 +29,20 @@ window.onload = function(){
         document.body.appendChild(canvas); //document permet de tapper dans le fichier html et d'aller chercher l'attribut body et appendChild permet de transferer notre canvas en html
         contexte = canvas.getContext('2d');
         serpentard = new snake([[6,4],[5,4],[4,4]], "right");
+        applee = new apple([10,10]);
         refreshCanvas();
     }
 
     function refreshCanvas(){
-        contexte.clearRect(0,0,canvas.width,canvas.height);
         serpentard.advance();
-        serpentard.draw();
-        setTimeout(refreshCanvas,delais);
+        if(serpentard.checkCollision()){
+            //Game over
+        }else{
+            contexte.clearRect(0,0,canvas.width,canvas.height);
+            serpentard.draw();
+            applee.draw();
+            setTimeout(refreshCanvas,delais);
+        }
     }
 
     function drawBlock(contexte,position){
@@ -94,6 +102,45 @@ window.onload = function(){
                 this.direction = newDirection;
             }
         };
+        this.checkCollision = function(){
+            var wallCollision = false;
+            var serpentCollision = false;
+            var tete = this.body[0]; //La tête est en position 0
+            var reste = this.body.slice(1); //Le restant du corps (on met 1 pour ne pas commencer à la position 0)
+            var serpentX = tete[0];
+            var serpentY = tete[1];
+            var minX = 0;
+            var minY = 0;
+            var maxX = widthInBlocks -1;
+            var maxY = heightInBlocks - 1;
+            var nestPasEntreLesMursHorizontaux = serpentX < minX || serpentX > maxX //Ou que la tête de mon serpent s'est prit le mur de gauche ou le mur de droite
+            var nestPasEntreLesMursVerticaux = serpentY < minY || serpentY > maxY //Ou que la tête de mon serpent s'est prit le mur du haut ou le mur du bas
+            if(nestPasEntreLesMursHorizontaux || nestPasEntreLesMursVerticaux){
+                wallCollision = true;
+            }
+            for(var i = 0; i<reste.length; i++){
+                if(serpentX == reste[i][0] && serpentY == reste[i][1]){
+                    serpentCollision == true;
+                }
+            }
+            return wallCollision || serpentCollision;
+        };
+    }
+
+    function apple(position){
+        this.position = position;
+        this.draw = function(){
+            contexte.save(); //Il enregistre les parametres précédents de mon contexte
+            contexte.fillStyle = "#33cc33"; //Définiton de la couleur de la pomme -> vert
+            contexte.beginPath();
+            var radius = blockSize/2; //Le rayon de la pomme
+            var x = position[0]*blockSize + radius;
+            var y = position[1]*blockSize + radius;
+            contexte.arc(x,y,radius,0,Math.PI*2,true);
+            contexte.fill();
+            contexte.restore(); //Restore les parametres précédents de mon contexte
+
+        }
     }
 
     document.onkeydown = function handleKeydown(e){ //Recuperation de la touche appuyée par l'utilisateur (e est l'evenement)
